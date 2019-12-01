@@ -12,7 +12,7 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 | Day | Part I | Part II |
 | --- |:---:| :---:|
-| [Day1](https://github.com/azargaz) | :soon: | :soon: |
+| [Day1](https://github.com/Azargaz/Advent-of-Code-2019/tree/master/day-1) | :ok_hand: | :soon: |
 
 ## Running tests
 
