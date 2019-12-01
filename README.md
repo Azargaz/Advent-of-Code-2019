@@ -1,8 +1,8 @@
 # Advent of Code 2019
 
-Advent of Code 2019 solutions.
+Advent of Code 2019 solutions in JavaScript. Testing done using Mocha and Chai frameworks.
 
-## Advent of Code 2019 Story
+## Story
 
 Santa has become stranded at the edge of the Solar System while delivering presents to other planets! To accurately calculate his position in space, safely align his warp drive, and return to Earth in time to save Christmas, he needs you to bring him measurements from fifty stars.
 
