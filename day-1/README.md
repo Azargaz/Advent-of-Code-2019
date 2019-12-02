@@ -1,6 +1,6 @@
 # --- Day 1: The Tyranny of the Rocket Equation ---
 
-## Story
+## --- Part One ---
 
 The Elves quickly load you into a spacecraft and prepare to launch.
 
