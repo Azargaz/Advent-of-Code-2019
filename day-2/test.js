@@ -1,5 +1,6 @@
 const assert = require('assert');
 const opcode = require('./opcode');
+const opcode_two = require('./opcode_two');
 const expect = require('chai').expect;
 const fs = require('fs');
 
@@ -45,6 +46,7 @@ describe('Day 2 - Part I Intcode Computer', () => {
 });
 
 describe('Day 2 - Part I Intcode Computer solution', () => {
+	let input;
 	it('should return not undefined', (done) => {
 		fs.readFile('./day-2/input.txt', 'utf8', (err, data) => {
 			if (err) {
@@ -60,6 +62,36 @@ describe('Day 2 - Part I Intcode Computer solution', () => {
 	it('should return valid solution', () => {
 		const output = opcode(input)[0];
 		console.log(`\tSolution to part I: ${output}`);
+		expect(output).to.be.a('number');
+	});
+});
+
+// Day 2 - part II tests
+describe('Day 2 - Part II Intcode Computer solution', () => {
+	let input;
+	let result;
+	it('should return not undefined', (done) => {
+		fs.readFile('./day-2/input2.txt', 'utf8', (err, data) => {
+			if (err) {
+				console.error(err);
+				return;
+			}
+			input = data;
+			expect(input).to.be.not.undefined;
+			done();
+		});
+	});
+
+	it(`should return 19690720 when input is ${input}`, (done) => {
+		result = opcode_two(input, 19690720);
+		const output = result[0];
+		assert.strictEqual(output, 19690720);
+		done();
+	});
+
+	it('should return valid solution', () => {		
+		const output = 100 * result[1] + result[2];
+		console.log(`\tSolution to part II: ${output}`);
 		expect(output).to.be.a('number');
 	});
 });
