@@ -57,7 +57,9 @@ Then, the full image can be found by determining the top visible pixel in each p
 
 So, the final image looks like this:
 
+```
 01
 10
+```
 
 What message is produced after decoding your image?
