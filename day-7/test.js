@@ -1,5 +1,6 @@
 const assert = require('assert');
 const circuits = require('./circuits');
+const circuits_two = require('./circuits_two');
 const expect = require('chai').expect;
 const fs = require('fs');
 
@@ -43,5 +44,42 @@ describe('Day 7 - Part I Amplification Circuit solution', () => {
 		const output = circuits(input);
 		console.log(`\tSolution to part I: ${output}`);
 		expect(output).to.be.a('number');
+	});
+});
+
+// Day 7 - part II tests
+describe('Day 7 - Part II Amplification Circuit', () => {
+    it('should return 139629729 when input is 3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5', () => {
+		let program = '3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5';
+		assert.strictEqual(circuits_two(program), 139629729);
+	});
+});
+
+describe('Day 7 - Part II Amplification Circuit', () => {
+    it('should return 18216 when input is 3,52,1001,52,-5,52,3,53,1,52,56,54,1007,54,5,55,1005,55,26,1001,54,-5,54,1105,1,12,1,53,54,53,1008,54,0,55,1001,55,1,55,2,53,55,53,4,53,1001,56,-1,56,1005,56,6,99,0,0,0,0,10', () => {
+		let program = '3,52,1001,52,-5,52,3,53,1,52,56,54,1007,54,5,55,1005,55,26,1001,54,-5,54,1105,1,12,1,53,54,53,1008,54,0,55,1001,55,1,55,2,53,55,53,4,53,1001,56,-1,56,1005,56,6,99,0,0,0,0,10';
+		assert.strictEqual(circuits_two(program), 18216);
+	});
+});
+
+describe('Day 7 - Part II Amplification Circuit solution', () => {
+	let input;
+	it('should return not undefined', (done) => {
+		fs.readFile('./day-7/input.txt', 'utf8', (err, data) => {
+			if (err) {
+				console.error(err);
+				return;
+			}
+			input = data;
+			expect(input).to.be.not.undefined;
+			done();
+		});
+	});
+
+	it('should return valid solution', (done) => {
+		const output = circuits_two(input);
+		console.log(`\tSolution to part II: ${output}`);
+		expect(output).to.be.a('number');
+		done();
 	});
 });
