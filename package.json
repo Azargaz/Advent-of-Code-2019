@@ -4,7 +4,7 @@
   "description": "Solutions to the Advent of Code 2019.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha day-**/test.js"
+    "test_js": "mocha day-[1-7]/test.js"
   },
   "author": "Azargaz",
   "license": "ISC",
