@@ -7,3 +7,6 @@ program = open("input.txt", "r").read()
 
 result = processIntcode(program, 1)
 print("Solution to part I: {}".format(result))
+
+result = processIntcode(program, 2)
+print("Solution to part II: {}".format(result))
