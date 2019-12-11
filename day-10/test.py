@@ -1,4 +1,4 @@
-from station import findMonitoringStation
+from station import findMonitoringStation, annihilateAsteroids
 
 input_value = open("input.txt", "r").read()
 # input_value = """.#..##.###...#######
@@ -22,5 +22,8 @@ input_value = open("input.txt", "r").read()
 # #.#.#.#####.####.###
 # ###.##.####.##.#..##"""
 
-result = findMonitoringStation(input_value)
-print(result)
+result, (x, y) = findMonitoringStation(input_value)
+print("Solution to part I: {}".format(result))
+
+result = annihilateAsteroids(input_value)
+print("Solution to part II: {}".format(result))
