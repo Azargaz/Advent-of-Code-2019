@@ -21,6 +21,11 @@ def write_param(program, param, mode, relative_base):
     elif mode is '2':
         return param + relative_base
 
+def resetIntcode():
+    global index, rel_base
+    index = 0
+    rel_base = 0
+
 def processIntcode(program, input_value):
     program = program.split(',')
 

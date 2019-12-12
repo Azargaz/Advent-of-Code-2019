@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from intcode import processIntcode
+from intcode import processIntcode, resetIntcode
 
 NORTH = "NORTH"
 EAST = "EAST"
@@ -29,7 +29,9 @@ def move(x, y, cur_dir):
         x -= 1
     return x, y
 
-def paint(input_value):
+def paint(input_value, starting_color):
+    resetIntcode()
+    
     program = input_value
 
     cur_dir = NORTH
@@ -37,7 +39,7 @@ def paint(input_value):
     x, y = 0, 0
 
     painting = {
-        (0, 0): 0
+        (0, 0): starting_color
     }
 
     while True:
@@ -60,11 +62,14 @@ def paint(input_value):
         x, y = move(x, y, cur_dir)
 
     paint = np.empty((70, 70))
+    paint.fill(0)
     
     for x, y in painting:
         paint[y+20, x+20] = painting[(x, y)]
     
+    fig = plt.figure()
+
     plt.imshow(paint, origin="lower")
-    plt.show()
+    plt.savefig("out_{}.png".format(starting_color))
 
     return len(painting)
